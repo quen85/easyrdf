@@ -21,8 +21,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
     $title = $graph->get($uri, "dcterms:title");
     $date = $graph->get($uri, "dcterms:date");
 
-    echo "<h1>".$title."</h1>";
-    echo "<p style='font-style: italic;'>".$date."</p>";
+    echo "<h1><a href='".$uri."'>".$title."</a> - <span style='font-style: italic;'>".$date."</span></h1>";
     echo "<h2>Auteurs :</h2>";
 
     $auteurs = $graph->all($uri, "dcterms:creator", "resource");
